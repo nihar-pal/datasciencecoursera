@@ -1,0 +1,21 @@
+Exp 7:
+Create an image of php project and push on Dockerhub repository.
+Install docker and signup on dockerhub: https://hub.docker.com/signup/
+Install WSL2 popup
+Run the given command on windows powershell run as administratotr
+Create PHP folder inside OS-c- program files- docker
+In PHP folder create Dockerfile and index.php
+In Dockerfile paste this
+FROM php
+COPY ./index.php ./
+EXPOSE 3000
+CMD ["php", "-S", "0.0.0.0:3000"]
+In index.php
+<html>
+    <?php echo "Hello world from a PHP container"?>
+</html>
+Open new terminal in VScode paste the following commands
+docker build . -t dockerhubaccountname/php
+docker run --name=php -p=3000:3000 dockerhubaccountname/php
+
+now open localhost:3000 in browser
