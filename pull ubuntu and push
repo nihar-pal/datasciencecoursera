@@ -1,0 +1,14 @@
+Demonstrate use of docker commands to pull ubuntu official image, create a file and push updated image on Dockerhub.
+
+In Vs code after installing docker
+docker --version
+docker login
+docker run -it -d ubuntu
+docker images
+docker tag 08d22c0ceb15 adef04584/test
+docker images
+docker push adef04584/test:latest
+docker pull adef04584/test
+docker images
+docker push adef04584/test:latest
+docker pull adef04584/test
